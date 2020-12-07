@@ -1,0 +1,22 @@
+#carouselExampleCaptions img{
+    height: 600px;
+    width: 800px;
+}
+
+#carouselExampleCaptions{
+    width: 800px;
+    height: 700px;
+}
+
+.carousel{
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+
+
+
+
+
