@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Home/Footer';
 import Home from './components/Home/Home';
 import {Link, Route} from 'react-router-dom';
+import Login from './components/Admin/Login';
 
 
 class App extends React.Component {
@@ -10,6 +11,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <Home/>
+      <Login/>
       <Footer/>
     </div>
   );
