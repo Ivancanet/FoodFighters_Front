@@ -1,0 +1,21 @@
+.admin ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.admin{
+    color: white;
+}
+
+.modal-body{
+    background-color: grey;
+}
+.modal-header{
+    background-color: grey;
+}
+
+.modal-footer{
+    background-color: grey;
+}
