@@ -9,10 +9,10 @@ const Home = () => {
     <div>
 
       <header>
-        <h1>Food Fighters Club</h1>
-      </header>
 
-      
+      </header>
+<br/>
+      <img src='/images/logo-foodfighters-vf-3.png' alt=''/>
         <div className="carousel">
           <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">

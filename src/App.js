@@ -179,6 +179,7 @@ class App extends React.Component {
           <Route exact path='/post' render={() =>
             this.state.userLogged.username
               ? <CreatePost
+              userLogged={this.state.userLogged}
               />
               : <Redirect to='/wines'
               />
