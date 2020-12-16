@@ -2,6 +2,7 @@ import React from 'react';
 import './Admin.css';
 import { Link, Redirect, Route, Switch } from 'react-router-dom';
 
+
 const Admin = (props) => {
 
     const { userLogged } = props;
@@ -9,6 +10,10 @@ const Admin = (props) => {
     return (
         <div className='admin'>
             <h1>Hello {userLogged.username}</h1>
+            <Switch>
+            <Link to='/post'> Create Post</Link>
+            </Switch>
+
             <ul>
                 <li>Canviar Usuario</li>
                 <li>Canviar Correo</li>

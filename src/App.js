@@ -6,13 +6,17 @@ import { Link, Redirect, Route, Switch } from 'react-router-dom';
 import Login from './components/Admin/Login';
 import AboutUs from './components/AboutUs/AboutUs';
 import BlogPage from './components/BlogPage/BlogPage';
-import Restaurants from './components/Restaurants';
+import Restaurants from './components/Restaurants/Restaurants';
 import Wines from './components/Wines/Wines';
-import Formations from './components/Formations';
-import Experiencies from './components/Experiencies';
+import Formations from './components/Formations/Formations';
+import Experiencies from './components/Experiencies/Experiencies';
 import Contact from './components/Contact/Contact'
 import UserService from './Services/UserService'
+import WineService from './components/Wines/WineService'
 import Admin from './components/Admin/Admin'
+import CreateWine from './components/Wines/CreateWine'
+import CreatePost from './components/CreatePost';
+
 
 
 
@@ -24,10 +28,22 @@ class App extends React.Component {
       username: '',
       password: ''
     },
-    reload: true
+    wine: {
+      image: '',
+      name: '',
+      year: '',
+      origin: '',
+      wineType: '',
+      grapeType: '',
+      wineSensation: '',
+      cellar: '',
+      pvp: ''
+    }
   }
 
   service = new UserService();
+
+  wineService = new WineService();
 
   submitLogin = (event) => {
     event.preventDefault();
@@ -69,8 +85,30 @@ class App extends React.Component {
     this.setState({ user: { ...this.state.user, [_eventTarget.name]: _eventTarget.value } });
   };
 
-  changeUser = (_eventTarget) =>{
+  changeUser = (_eventTarget) => {
     this.setState({ user: { ...this.state.user, username: _eventTarget.value } });
+  }
+
+  changeWine = (_eventTarget) => {
+    this.setState({ wine: { ...this.state.wine, [_eventTarget.name]: _eventTarget.value } });
+  }
+
+  submitWine = (event) => {
+    event.preventDefault();
+    const wine = this.state.wine;
+  
+
+
+    this.wineService.createWine(wine)
+      .then((wine) => {
+        console.log(wine)
+        
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+
+
   }
 
   componentDidMount() {
@@ -114,7 +152,9 @@ class App extends React.Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/blog' component={BlogPage} />
           <Route exact path='/restaurants' component={Restaurants} />
-          <Route exact path='/wines' component={Wines} />
+          <Route exact path='/wines' render={() => (
+            <Wines userLogged={this.state.userLogged} />
+          )} />
           <Route exact path='/formations' component={Formations} />
           <Route exact path='/experiencies' component={Experiencies} />
           <Route exact path='/aboutUs' component={AboutUs} />
@@ -131,6 +171,29 @@ class App extends React.Component {
                 submitLogin={this.submitLogin}
                 user={this.state.user}
                 changeHandler={this.changeHandler}
+              />
+
+          } />
+
+
+          <Route exact path='/post' render={() =>
+            this.state.userLogged.username
+              ? <CreatePost
+              />
+              : <Redirect to='/wines'
+              />
+
+          } />
+
+
+          <Route exact path='/wines/create' render={() =>
+            this.state.userLogged.username
+              ? <CreateWine
+
+              submitWine={this.submitWine}
+                changeWine={this.changeWine}
+              />
+              : <Redirect to='/wines'
               />
 
           } />

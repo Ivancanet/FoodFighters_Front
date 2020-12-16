@@ -1,0 +1,27 @@
+.wines img{
+    width: 400px;
+    height: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.wines{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+
+.card{
+    background-color: black;
+    align-items: center;
+    width: 420px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
