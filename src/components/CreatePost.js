@@ -6,10 +6,10 @@ import PostService from './PostService';
 import { parse } from 'node-html-parser';
 import toHtml from 'string-to-html';
 import ReactHtmlParser from 'react-html-parser'
+import { ImageDrop } from 'quill-image-drop-module';
 
 
-
-
+Quill.register('modules/imageDrop', ImageDrop);
 
 
 
@@ -37,13 +37,14 @@ class CreatePost extends React.Component {
 
 
     modules = {
+        imageDrop:true,
         toolbar: [
             [{ 'header': [1, 2, false] }],
             ['bold', 'italic', 'underline', 'strike', 'blockquote'],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
             [{ 'color': [] }, { 'background': [] }],
             [{ 'align': [] }],
-            ['link', 'image', 'video'],
+            ['link','video'],
             ['clean']
         ],
     }
@@ -121,7 +122,7 @@ class CreatePost extends React.Component {
                         <div className="form-group row">
                             <label htmlFor="images" className="col-sm-2 col-form-label">Imagen</label>
                             <div className="col-sm-8">
-                                <input type="text" className="form-control" placeholder='Url imagen titular' name='images' id="images"
+                                <textarea type="text" className="form-control" placeholder='Url imagen titular' name='images' id="images"
                                     onChange={(event) => {
                                         this.changeHandler(event.target)
                                     }} />

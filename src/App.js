@@ -8,14 +8,15 @@ import AboutUs from './components/AboutUs/AboutUs';
 import BlogPage from './components/BlogPage/BlogPage';
 import Restaurants from './components/Restaurants/Restaurants';
 import Wines from './components/Wines/Wines';
-import Formations from './components/Formations/Formations';
-import Experiencies from './components/Experiencies/Experiencies';
+import Formations from './components/BlogPage/Formations';
+import Experiencies from './components/BlogPage/Experiencies';
 import Contact from './components/Contact/Contact'
 import UserService from './Services/UserService'
 import WineService from './components/Wines/WineService'
 import Admin from './components/Admin/Admin'
 import CreateWine from './components/Wines/CreateWine'
 import CreatePost from './components/CreatePost';
+import SingleBlog from './components/BlogPage/SingleBlog'
 
 
 
@@ -198,6 +199,8 @@ class App extends React.Component {
               />
 
           } />
+
+          <Route path='/post/:id' component={SingleBlog}/>
         </Switch>
 
         <Footer />
