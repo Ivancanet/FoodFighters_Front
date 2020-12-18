@@ -67,7 +67,7 @@ class Wines extends React.Component {
     render() {
         return (
             <div>
-                <h1>Wines Under Construction</h1>
+                <h2>Vinos</h2>
                 {this.props.userLogged.username && <Link to='/wines/create'>Crear Vino</Link>}
 
                 {this.state.wines.length > 0 && this.renderWines()}
