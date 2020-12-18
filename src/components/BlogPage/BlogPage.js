@@ -49,14 +49,27 @@ class BlogPage extends React.Component {
         })
     }
 
+    renderSpinner = () => {
+        return (
+            <div>
+                <img src='https://media.tenor.com/images/acacf325add2deb882ed5d91441a8ad7/tenor.gif' alt='Loading' />
+                <br/>
+                <div class="spinner-border text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        )
+
+    }
+
 
 
     render() {
         return (
             <div>
                 <h2>Publicaciones</h2>
-
-                {this.state.blog.length > 0 && this.renderBlogs()}
+                <br/>
+                {this.state.blog.length === 0 ? this.renderSpinner() : this.renderBlogs() }
 
             </div>
         );

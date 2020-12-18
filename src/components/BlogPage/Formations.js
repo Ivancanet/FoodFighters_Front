@@ -49,6 +49,19 @@ class Formations extends React.Component {
         
     }
 
+    renderSpinner = () => {
+        return (
+            <div>
+                <img src='https://media.tenor.com/images/acacf325add2deb882ed5d91441a8ad7/tenor.gif' alt='Loading' />
+                <br/>
+                <div class="spinner-border text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        )
+
+    }
+
 
 
     render() {
@@ -56,7 +69,7 @@ class Formations extends React.Component {
             <div>
                 <h2>Formaciones</h2>
 
-                {this.state.formations.length > 0 && this.renderFormations()}
+                {this.state.formations.length === 0 ? this.renderSpinner() : this.renderFormations() }
 
             </div>
         );
