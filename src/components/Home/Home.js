@@ -7,12 +7,7 @@ const Home = () => {
 
   return (
     <div>
-
-      <header>
-
-      </header>
-<br/>
-      <img src='/images/logo-foodfighters-vf-3.png' alt=''/>
+      <img className='logo' src='/images/logo-foodfighters-vf-3.png' alt='Logo_Image'/>
         <div className="carousel">
           <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">

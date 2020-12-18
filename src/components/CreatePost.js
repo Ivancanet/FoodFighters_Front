@@ -188,7 +188,7 @@ class CreatePost extends React.Component {
                         </div>
 
                         <div style={{ textAlign: 'center', margin: '2rem', }}>
-                            <Link to='/'><button type='submit'>Create Post</button></Link>
+                            <button type='submit'>Crear Post</button>
                         </div>
                     </form>
                 </div>

@@ -4,7 +4,7 @@ class UserService {
 
     constructor() {
         let service = axios.create({
-            baseURL: 'https://foodfighters-web.herokuapp.com',
+            baseURL: 'http://localhost:3000',
             withCredentials: true
         });
 
@@ -34,8 +34,8 @@ class UserService {
             .then(response => response.data)
     }
 
-    changeUser = (username) =>{
-        return this.service.post('/changeUser', { username })
+    changeUser = (username, id) =>{
+        return this.service.post('/changeUser', { username, id })
         .then(response => response.data)
     }
 

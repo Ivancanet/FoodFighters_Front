@@ -6,7 +6,7 @@ const Login = (props) => {
   
     return (
         <div>
-            <h1>Login Under Construction</h1>
+            <h2>Acceso</h2>
 
             <form onSubmit={submitLogin}>
                 <label htmlFor='username'>Username:</label>

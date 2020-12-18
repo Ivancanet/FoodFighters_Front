@@ -47,3 +47,14 @@
 .bg-light{
   background-color: #cacaca !important;
 }
+
+.navigation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation img{
+  width: 80px;
+  height: 80px;
+}

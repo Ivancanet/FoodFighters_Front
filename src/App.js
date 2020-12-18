@@ -113,26 +113,53 @@ class App extends React.Component {
 
   }
 
+  submitUser = (event) => {
+
+
+    const username = this.state.user.username;
+    const id = this.state.userLogged._id;
+    console.log(id);
+    this.service.changeUser(username, id)
+      .then((loginUser) => {
+        console.log(loginUser);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+
+  };
+
   componentDidMount() {
     this.checkIfLoggedIn();
     console.log(this.checkIfLoggedIn())
 
   }
 
-
+  renderUser = () => {
+    return (
+      <div className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {this.state.userLogged.username}
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <Link className="dropdown-item" to='/admin'>Opciones</Link>
+          <button className="dropdown-item" onClick={() => this.logOut()}>Log Out</button>
+        </div>
+      </div>
+    )
+  }
 
   render() {
     return (
       <div className="App">
-        <header>
-          <Navbar />
+        <header className='navigation'>
+          <Navbar 
+          userLogged={this.state.userLogged}
+          />
+          {this.state.userLogged.username && this.renderUser()}
         </header>
-        <br />
-        <h3>{this.state.userLogged.username && `Welcome, ${this.state.userLogged.username}`}</h3>
-        <br />
-        {this.state.userLogged.username && <button onClick={() => this.logOut()}>Log Out</button>}
-
-
+        <hr></hr>
+  
 
         <Switch>
           <Route exact path='/' component={Home} />
@@ -147,7 +174,11 @@ class App extends React.Component {
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/admin' render={() => (
             this.state.userLogged.username
-              ? <Admin userLogged={this.state.userLogged} />
+              ? <Admin
+                userLogged={this.state.userLogged}
+                changeHandler={this.changeHandler}
+                submitUser={this.submitUser}
+              />
               : <Redirect to='/login' />)
           } />
           <Route exact path='/login' render={() =>
