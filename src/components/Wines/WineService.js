@@ -4,7 +4,7 @@ class WineService {
 
     constructor() {
         let service = axios.create({
-            baseURL: 'https://foodfighters-web.herokuapp.com/',
+            baseURL: 'https://foodfighters-web.herokuapp.com',
             withCredentials: true
         });
 
