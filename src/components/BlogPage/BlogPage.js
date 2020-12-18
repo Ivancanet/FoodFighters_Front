@@ -27,7 +27,7 @@ class BlogPage extends React.Component {
 
     renderBlogs = () => {
 
-        return this.state.blog.map((blogs) => {
+        
 
             return this.state.blog.map((blogs) => {
                 return (
@@ -46,7 +46,7 @@ class BlogPage extends React.Component {
                 )
             })
 
-        })
+        
     }
 
     renderSpinner = () => {
@@ -62,7 +62,7 @@ class BlogPage extends React.Component {
 
     }
 
-
+//Canviarlo justo cuando se esta haciendo, antes de subirse a mongo
 
     render() {
         return (
