@@ -6,6 +6,7 @@ import PostService from './PostService';
 import ReactHtmlParser from 'react-html-parser'
 import { ImageDrop } from 'quill-image-drop-module';
 import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ImageResize } from 'quill-image-resize-module';
 import '../Post.css'
 
@@ -38,9 +39,9 @@ class CreatePost extends React.Component {
 
 
     modules = {
-         imageResize: {
+        imageResize: {
             displaySize: true
-          }, 
+        },
         imageDrop: true,
         toolbar: [
             [{ 'header': [1, 2, false] }],
@@ -67,8 +68,8 @@ class CreatePost extends React.Component {
         this.setState({ post: { ...this.state.post, text: value } });
     };
 
-    setUser = (value)=>{
-        this.setState({post:{ ...this.state.post, creator: value } })
+    setUser = (value) => {
+        this.setState({ post: { ...this.state.post, creator: value } })
     }
 
     onSubmit = (event) => {
@@ -79,7 +80,7 @@ class CreatePost extends React.Component {
         this.postService.createPost(post)
             .then((result) => {
                 console.log('Hola');
-                  <Redirect to='/' /> 
+                <Redirect to='/' />
             })
             .catch((err) => {
                 console.log(err);
@@ -92,17 +93,17 @@ class CreatePost extends React.Component {
         this.setState({ post: { ...this.state.post, [_eventTarget.name]: _eventTarget.value } });
     };
 
-componentDidMount=()=>{
-    this.setUser(this.props.userLogged.username);
-}
+    componentDidMount = () => {
+        this.setUser(this.props.userLogged.username);
+    }
 
     render() {
         return (
             <div className='white-text'>
-            <div className='text-post'>
-            <article className='text-post'>{ReactHtmlParser(this.state.post.text)}</article>
-            </div>
-                
+                <div className='text-post'>
+                    <article className='text-post'>{ReactHtmlParser(this.state.post.text)}</article>
+                </div>
+
                 <h1>CreatePost Under Construction</h1>
                 <div style={{ maxWidth: '700px', margin: '2rem auto' }}>
                     <div style={{ textAlign: 'center' }}>
@@ -187,7 +188,7 @@ componentDidMount=()=>{
                         </div>
 
                         <div style={{ textAlign: 'center', margin: '2rem', }}>
-                            <button type='submit'>Create Post</button>
+                            <Link to='/'><button type='submit'>Create Post</button></Link>
                         </div>
                     </form>
                 </div>
