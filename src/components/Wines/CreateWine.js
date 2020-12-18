@@ -6,7 +6,7 @@ const CreateWine = (props) => {
     const { changeWine, submitWine } = props
     return (
         <div>
-            <h1>CreateWine Under Construction</h1>
+            <h2>Vinos</h2>
             <div className='wines'>
                 <form onSubmit={submitWine}>
                     <div className="form-group row">

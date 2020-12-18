@@ -16,7 +16,7 @@ class Experiencies extends React.Component {
 
         this.service.renderExperiencie()
             .then((experiencies) => {
-                this.setState({ experiencies: experiencies});
+                this.setState({ experiencies: experiencies });
             })
             .catch((err) => {
                 console.log(err);
@@ -27,26 +27,26 @@ class Experiencies extends React.Component {
 
     renderExperiencie = () => {
 
-        return this.state.experiencies.map((experiencies) => {
 
-            return this.state.experiencies.map((experiencies) => {
-                return (
-                    <div className='wines'>
-                        <div className='background'>
-                            <div className="card" >
-                                <img src={experiencies.images} className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 class="card-title">{experiencies.title}</h5>
-                                    <p class="card-text">{experiencies.description}</p>
-                                    <Link to={`/post/${experiencies._id}`} class="btn btn-secondary">Ver Post</Link>
-                                </div>
+
+        return this.state.experiencies.map((experiencies) => {
+            return (
+                <div className='wines'>
+                    <div className='background'>
+                        <div className="card" >
+                            <img src={experiencies.images} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 class="card-title">{experiencies.title}</h5>
+                                <p class="card-text">{experiencies.description}</p>
+                                <Link to={`/post/${experiencies._id}`} class="btn btn-secondary">Ver Post</Link>
                             </div>
                         </div>
                     </div>
-                )
-            })
-
+                </div>
+            )
         })
+
+
     }
 
 
@@ -54,7 +54,7 @@ class Experiencies extends React.Component {
     render() {
         return (
             <div>
-                <h1>Experiencies Under Construction</h1>
+                <h2>Experiencias</h2>
 
                 {this.state.experiencies.length > 0 && this.renderExperiencie()}
 
