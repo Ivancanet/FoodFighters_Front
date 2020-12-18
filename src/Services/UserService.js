@@ -4,7 +4,7 @@ class UserService {
 
     constructor() {
         let service = axios.create({
-            baseURL: 'http://localhost:3000',
+            baseURL: 'https://foodfighters-web.herokuapp.com/',
             withCredentials: true
         });
 
