@@ -49,7 +49,7 @@ class CreatePost extends React.Component {
             [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
             [{ 'color': [] }, { 'background': [] }],
             [{ 'align': [] }],
-            ['link', 'video'],
+            ['link', 'image','video'],
             ['clean']
         ],
     }
@@ -104,7 +104,7 @@ class CreatePost extends React.Component {
                     <article className='text-post'>{ReactHtmlParser(this.state.post.text)}</article>
                 </div>
 
-                <h1>CreatePost Under Construction</h1>
+                <h2>Creación del post</h2>
                 <div style={{ maxWidth: '700px', margin: '2rem auto' }}>
                     <div style={{ textAlign: 'center' }}>
                     </div>

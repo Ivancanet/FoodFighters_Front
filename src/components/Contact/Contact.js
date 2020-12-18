@@ -4,7 +4,7 @@ import './Contact.css';
 const Contact = () => {
     return (
         <div className='contact'>
-            <h5>Como contactar con nosotros</h5>
+            <h2>Como contactar con nosotros</h2>
             <p>Puedes contactar con nosotros enviandonos un correo al siguiente correo: <br />
                 <a href="mailto:foodfightersgroup@gmail.com"> <img src='/images/email-logo.png' alt='email' /> foodfightersgroup@gmail.com </a> <br />
                 Por un mensaje directo a nuestro instagram: <br />

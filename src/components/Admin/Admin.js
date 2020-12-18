@@ -11,7 +11,7 @@ const Admin = (props) => {
         <div className='admin'>
 
 
-            <Link to='/post' className="nav-link active"> <h3>Create Post</h3> </Link>
+            <Link to='/post' className="nav-link active"> <h2>Crear Post</h2> </Link>
 
             <br />
 
