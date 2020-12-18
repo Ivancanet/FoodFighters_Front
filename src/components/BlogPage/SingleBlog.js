@@ -32,12 +32,12 @@ class IndividualBlog extends React.Component {
     renderSinglePost = () => {
         return (
             <div>
+            <br/>
             <h2>{this.state.post.title}</h2>
             <h3>{this.state.post.description}</h3>
-            <img src={this.state.post.images} alt='Imagen'></img><br/>
             <p>{ReactHtmlParser(this.state.post.text)}</p>
-            <p>{this.state.post.date}</p>
-            <p>{this.state.post.creator}</p>
+            <p>Escrito por: <strong>{this.state.post.creator}</strong></p>
+            <p>Fecha: {this.state.post.date}</p>
             </div>
         )
     }

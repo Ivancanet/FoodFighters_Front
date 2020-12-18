@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BlogService from './BlogService';
-import ReactHtmlParser from 'react-html-parser'
+
 
 
 class BlogPage extends React.Component {
@@ -54,7 +54,7 @@ class BlogPage extends React.Component {
     render() {
         return (
             <div>
-                <h1>BlogPage Under Construction</h1>
+                <h2>Publicaciones</h2>
 
                 {this.state.blog.length > 0 && this.renderBlogs()}
 

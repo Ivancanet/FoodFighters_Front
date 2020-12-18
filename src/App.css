@@ -38,3 +38,12 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar,
+.navbar-light{
+  background-color: #1c8fe0;
+}
+
+.bg-light{
+  background-color: #cacaca !important;
+}

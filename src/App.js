@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 import Footer from './components/Home/Footer';
 import Home from './components/Home/Home';
 import { Link, Redirect, Route, Switch } from 'react-router-dom';
@@ -17,7 +17,8 @@ import Admin from './components/Admin/Admin'
 import CreateWine from './components/Wines/CreateWine'
 import CreatePost from './components/CreatePost';
 import SingleBlog from './components/BlogPage/SingleBlog'
-
+import Navbar from './components/NavBar'
+import './App.css';
 
 
 
@@ -97,13 +98,13 @@ class App extends React.Component {
   submitWine = (event) => {
     event.preventDefault();
     const wine = this.state.wine;
-  
+
 
 
     this.wineService.createWine(wine)
       .then((wine) => {
         console.log(wine)
-        
+
       })
       .catch((err) => {
         console.log(err);
@@ -123,25 +124,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
-
-        <Link to='/'>Inicio</Link>
-        <br />
-        <Link to='/blog'>Críticas Gastronomicas</Link>
-        <br />
-        <Link to='/restaurants'>Restaurantes</Link>
-        <br />
-        <Link to='/wines'>Vinos</Link>
-        <br />
-        <Link to='/formations'>Formaciones</Link>
-        <br />
-        <Link to='/experiencies'>Experiencias</Link>
-        <br />
-        <Link to='/aboutUs'>Sobre Nosotros</Link>
-        <br />
-        <Link to='/contact'>Contacto</Link>
-        <br />
-        <Link to='/admin'>Admin</Link>
+        <header>
+          <Navbar />
+        </header>
         <br />
         <h3>{this.state.userLogged.username && `Welcome, ${this.state.userLogged.username}`}</h3>
         <br />
@@ -180,7 +165,7 @@ class App extends React.Component {
           <Route exact path='/post' render={() =>
             this.state.userLogged.username
               ? <CreatePost
-              userLogged={this.state.userLogged}
+                userLogged={this.state.userLogged}
               />
               : <Redirect to='/wines'
               />
@@ -192,7 +177,7 @@ class App extends React.Component {
             this.state.userLogged.username
               ? <CreateWine
 
-              submitWine={this.submitWine}
+                submitWine={this.submitWine}
                 changeWine={this.changeWine}
               />
               : <Redirect to='/wines'
@@ -200,7 +185,7 @@ class App extends React.Component {
 
           } />
 
-          <Route path='/post/:id' component={SingleBlog}/>
+          <Route path='/post/:id' component={SingleBlog} />
         </Switch>
 
         <Footer />

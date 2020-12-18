@@ -19,6 +19,19 @@ class BlogService {
             .then(response => response.data)
     };
 
+    renderFormation = () =>{
+        return this.service.get('/formation')
+            .then(response => response.data)
+    }
+
+    renderExperiencie = () =>{
+        return this.service.get('/experiencie')
+            .then(response => response.data)
+    }
+
+ 
+
+
     renderPost = (id) => {
         console.log(id)
         return this.service.post('/post', {id})

@@ -27,12 +27,6 @@ const Admin = (props) => {
             </div>
 
 
-
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#changeModal">
-                Launch demo modal
-            </button>
-
-
             <div className="modal fade" id="userModal" tabIndex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">

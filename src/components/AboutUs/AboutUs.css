@@ -1,0 +1,10 @@
+.test{
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.inner-test{
+    width: 50%;
+}

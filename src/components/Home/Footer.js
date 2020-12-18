@@ -8,6 +8,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <footer>
+            <hr></hr>
                 <h5>Club Food Fighters</h5>
                 <ul>
                     <li><a href='https://www.instagram.com/clubfoodfighters' target='_blank' rel='noreferrer'> <img src='/images/instagram-logo.png' alt='instagram' /> @clubfoodfighters</a></li>
