@@ -23,6 +23,11 @@ class IndividualBlog extends React.Component {
                 this.setState({ post: post });
 
             })
+            .then(()=>{
+                const modifyDate = this.state.post.date;
+                console.log(modifyDate.getFullYear());
+                //modifyDate(modifyDate.getFullYear(),modifyDate.getMonth() , modifyDate.getDate())
+            })
             .catch((err) => {
                 console.log(err);
             });
